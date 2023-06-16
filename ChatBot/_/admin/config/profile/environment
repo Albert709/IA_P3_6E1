@@ -1,0 +1,4 @@
+LANG=en_US.UTF-8
+LC_ALL=en_US.UTF-8
+PATH=/home/albert79/.local/bin:/home/albert79/.local/share/gem/ruby/3.1.0/bin:/home/albert79/.gem/ruby/3.1.0/bin:/home/albert79/.composer/vendor/bin:/home/albert79/.npm-packages/bin:/usr/local/bin:/usr/bin:/bin
+TMPDIR=/home/albert79/admin/tmp

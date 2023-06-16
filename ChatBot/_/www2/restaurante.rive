@@ -1,0 +1,90 @@
++ hola
+- ¡Hola! Estás siendo contestado por un robot, esta es la información que te puedo ofrecer\n
+^ Números telefónicos\n
+^ Nuestra dirección\n
+^ Entregas\n
+^ Horarios\n
+^ Menú\n
+
+! var lunes = Menu del Lunes\n 
+^ Chiles en nogada $20.50\n 
+^ Chilaquiles $15.50\n
+
+! var martes = Menu del Martes \n
+^ Huevo en salsa $40.50 \n
+^ Lonche de jamón $25.50 \n
+
+! var miercoles = Menu del Miercoles \n
+^ Enchiladas (5) $120.50 \n
+^ Caldo de olla $15.50 \n
+
+! var jueves = Menu del Jueves \n
+^ Tacos (5) $120.50 \n
+^ Quesadillas 15.50 \n
+
+! var viernes = Menu del Viernes \n
+^ Lonche de jamón $25.50 \n
+^ Tacos dorados $15.50 \n
+
+! var sabado = Menu del Sabado \n
+^ Enchiladas (5) $120.50 \n
+^ Flautas $15.50 \n
+
+! var domingo = Los domingo esta cerrado
+
+! var horario = Lunes abrimos de 08:00 a 18:00\n
+^ Martes abrimos de 08:00 a 18:00\n
+^ Miercoles abrimos de 08:00 a 18:00\n
+^ Jueves abrimos de 08:00 a 18:00\n
+^ Viernes abrimos de 08:00 a 18:00\n
+^ Sabados abrimos de 08:00 a 12:00\n
+^ Domingos no abrimos\n
+
++ [*] lunes{weight=2} [*]
+- <bot lunes>
+
++ [*] martes{weight=2} [*]
+- <bot martes>
+
++ [*] miercoles{weight=2} [*]
+- <bot miercoles>
+
++ [*] jueves{weight=2} [*]
+- <bot jueves>
+
++ [*] viernes{weight=2} [*]
+- <bot viernes>
+
++ [*] sabado{weight=2} [*]
+- <bot sabado>
+
++ [*] domingo{weight=2} [*]
+- <bot domingo>
+
+
++ [*] (menu|carta) [*]
+- <bot lunes> \n <bot martes> \n <bot miercoles> \n <bot jueves> \n <bot viernes> \n <bot sabado> \n <bot domingo>
+
++ como estas
+@ hola
+
++ hay alguien*
+@ hola
+
++ [*] (telefono|celular|cel|tel) [*]
+- Nuestro telefono es 3310146486
+
++ [*] (direccion|ubicacion|lugar|ubicas|ubican|donde) [*]
+- Nuestra direccion es Nueva Escocia 1885, Guadalajara, Jalisco
+- Nos encontramos ubicados en la Colonia Providencia, en la calle Nueva Escocia 1885, Guadalajara, Jalisco
+
++ [*] (entregas|a domicilio) [*]
+- Realizamos entregas a domicilio solo de lunes a viernes de 11:00 a 15:00
+
++ [*] (hora|horarios|dias|abierto){weight=3} [*]
+- <bot horario>
+
++ *
+- Recuerda que soy un robot, me podrías preguntar de otra forma
+- Intenta hacer tu pregunta de otra manera.
+- No te entendí, ¿puedes escribirlo de otra manera?
